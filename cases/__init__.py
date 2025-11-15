@@ -138,7 +138,7 @@ class cased(str):
     	"""
     	count: tuple = 0
     	for i in self:
-    		 if not i in ("a", "e", "i", "o", "u", "y", " "):
+    		 if not i.lower() in ("a", "e", "i", "o", "u", "y", " "):
     		 	count += 1
     	return count
     
@@ -148,7 +148,7 @@ class cased(str):
     	"""
     	count: int = 0
     	for i in self:
-    		 if i in ("a", "e", "i", "o", "u", "y"):
+    		 if i.lower() in ("a", "e", "i", "o", "u", "y"):
     		 	count += 1
     	return count
     	
@@ -165,10 +165,8 @@ class cased(str):
 if __name__ == "__main__":
     a: cased = cased("hello world")
     print(a.reverse(True))
-    s = cased("storage emulated 0 utilify utilify main.py")
+    s = cased("data data terminal localStorage main.py")
     print(s.path())
     print(cased("user profile info").train())
     print(cased("max speed").upper_snake())
-    print(cased("Hello World").swapcase())
-    print(cased("Hello world").rm_vowels())
     
